@@ -20,8 +20,6 @@ class Calculator {
         return this.currentOperand;
     }
 
-
-
     chooseOperation(operation) {
         if (this.currentOperand === '') {
             return;
@@ -85,8 +83,10 @@ class Calculator {
             integerDisplay = integerDigits;
         }
 
-        if (decimalDigits != null) {
+        if (decimalDigits != null && !stringNumber.includes('-')) {
             return `${integerDisplay}.${decimalDigits}`;
+        } else if (decimalDigits != null && stringNumber.includes('-')) {
+            return `-${integerDisplay}.${decimalDigits}`;
         } else {
             return integerDisplay;
         }
@@ -144,7 +144,6 @@ equalsButton.addEventListener('click', () => {
 });
 
 plusMinusButton.addEventListener('click', () => {
-    // calculator.appendNumber('');
     if (calculator.currentOperand) {
         calculator.currentOperand = -calculator.currentOperand;
         calculator.updateDisplay();
