@@ -2,9 +2,7 @@ html {
   box-sizing: border-box;
 }
 
-*,
-*::after,
-*::before {
+*, *::after, *::before {
   box-sizing: inherit;
 }
 
@@ -34,11 +32,11 @@ body {
   text-align: right;
 }
 
-.form__result_screen {
+.form__result {
   display: flex;
 }
 
-.form__result_symbol {
+.form__symbol {
   display: flex;
   align-items: center;
   color: #52c9dc;
@@ -84,20 +82,11 @@ body {
   border-bottom: 1px solid #1e2435;
   line-height: 33px;
   line-height: 67px;
-  padding-left: 34px;
-}
-
-.calculator__result:before {
-  content: "=";
-  position: absolute;
-  left: 0;
-  top: 0;
-  color: #52c9dc;
+  padding-left: 4px;
 }
 
 .calculator__operation {
   font-size: 25px;
-  /* margin-top: 16px; */
 }
 
 .calculator__keyboard {
