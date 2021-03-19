@@ -16,7 +16,14 @@ class Calculator {
     }
 
     appendNumber(number) {
+        if (number === '.' && this.currentOperand.includes('.')) {
+            return;
+        } else if (number === '.') {
+            number = '0.';
+        }
+
         this.currentOperand = this.currentOperand.toString() + number.toString();
+        
         return this.currentOperand;
     }
 
